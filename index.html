@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manaf | Portfolio</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #121a31;
+        --text: #e7ecff;
+        --muted: #a5b2d9;
+        --accent: #6ea8fe;
+        --accent-2: #5de2c6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #162145, var(--bg));
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(8px);
+        background: rgba(11, 16, 32, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 80px 0 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        margin: 0 0 12px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        max-width: 700px;
+      }
+
+      .actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        color: #00112e;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      .btn-outline {
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      section {
+        padding: 28px 0;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        margin-top: 0;
+        color: var(--muted);
+      }
+
+      .card a {
+        color: var(--accent-2);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding: 30px 0 40px;
+        color: var(--muted);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">Manaf Portfolio</div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Hi, I'm Manaf 👋</h1>
+        <p>
+          I'm a developer building modern web experiences. Welcome to my live
+          portfolio where I share featured projects, skills, and ways to connect.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I enjoy creating clean, responsive, and user-focused websites. I am
+          continuously learning and shipping real projects.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Live Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Portfolio Website</h3>
+            <p>This website, hosted using GitHub Pages.</p>
+            <a href="https://manaf430.github.io/" target="_blank" rel="noopener noreferrer">Open Live</a>
+          </article>
+          <article class="card">
+            <h3>Project Repository</h3>
+            <p>Explore source code and updates for my work.</p>
+            <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          </article>
+          <article class="card">
+            <h3>Next Featured Project</h3>
+            <p>Add your next live project link here.</p>
+            <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">Add Link</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Responsive Design</span>
+          <span class="chip">Git & GitHub</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Reach me via GitHub:
+          <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">github.com/manaf430</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Manaf. Built with HTML & CSS.</div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
