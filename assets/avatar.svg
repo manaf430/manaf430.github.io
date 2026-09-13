@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Container -->
+  <rect width="200" height="200" rx="44" fill="url(#bgGrad)"/>
+  <rect x="2" y="2" width="196" height="196" rx="42" stroke="url(#avatarGrad)" stroke-width="2" stroke-opacity="0.4"/>
+  
+  <!-- Circuit & Neural Grid Backing -->
+  <g opacity="0.25" stroke="#38bdf8" stroke-width="1.5">
+    <line x1="30" y1="50" x2="80" y2="50"/>
+    <line x1="80" y1="50" x2="110" y2="20"/>
+    <line x1="120" y1="180" x2="150" y2="150"/>
+    <line x1="150" y1="150" x2="180" y2="150"/>
+    <line x1="20" y1="120" x2="60" y2="120"/>
+    <line x1="140" y1="80" x2="180" y2="80"/>
+  </g>
+  <circle cx="80" cy="50" r="3" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="150" cy="150" r="3" fill="#818cf8" opacity="0.5"/>
+  <circle cx="60" cy="120" r="3" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="140" cy="80" r="3" fill="#818cf8" opacity="0.5"/>
+
+  <!-- Glowing Outer Ring -->
+  <circle cx="100" cy="100" r="62" stroke="url(#avatarGrad)" stroke-width="2.5" stroke-dasharray="8 6" filter="url(#glow)" opacity="0.8"/>
+  <circle cx="100" cy="100" r="54" fill="#0b1329" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+
+  <!-- Stylized "AM" Monogram -->
+  <text x="100" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="40" font-weight="800" text-anchor="middle" fill="url(#avatarGrad)" letter-spacing="1">AM</text>
+  
+  <!-- Status indicator dot -->
+  <circle cx="142" cy="142" r="9" fill="#10b981" stroke="#020617" stroke-width="3"/>
+</svg>

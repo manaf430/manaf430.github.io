@@ -1,252 +1,1186 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manaf | Portfolio</title>
-    <style>
-      :root {
-        --bg: #0b1020;
-        --panel: #121a31;
-        --text: #e7ecff;
-        --muted: #a5b2d9;
-        --accent: #6ea8fe;
-        --accent-2: #5de2c6;
-      }
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Manaf | AI Engineer &amp; Software Engineer</title>
+  <meta name="description" content="Portfolio of Abdul Manaf - AI Engineer and Software Engineer specializing in production LLM applications, agentic RAG systems, LangGraph, FastAPI, and scalable AWS cloud architectures." />
+  <meta name="keywords" content="Abdul Manaf, AI Engineer, Software Engineer, LLMs, RAG, LangGraph, FastAPI, Python, Machine Learning, AWS, Portfolio" />
+  <meta name="author" content="Abdul Manaf" />
 
-      * {
-        box-sizing: border-box;
-      }
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abdul Manaf | AI Engineer &amp; Software Engineer" />
+  <meta property="og:description" content="AI &amp; Software Engineer building production LLMs, Agentic RAG, and scalable backends." />
+  <meta property="og:url" content="https://manaf430.github.io/" />
+  <meta property="og:image" content="https://manaf430.github.io/assets/avatar.svg" />
 
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: radial-gradient(circle at top, #162145, var(--bg));
-        color: var(--text);
-        line-height: 1.6;
-      }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abdul Manaf | AI Engineer &amp; Software Engineer" />
+  <meta name="twitter:description" content="AI &amp; Software Engineer building production LLMs, Agentic RAG, and scalable backends." />
+  <meta name="twitter:image" content="https://manaf430.github.io/assets/avatar.svg" />
 
-      .container {
-        width: min(1100px, 92%);
-        margin: 0 auto;
-      }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-      header {
-        padding: 20px 0;
-        position: sticky;
-        top: 0;
-        backdrop-filter: blur(8px);
-        background: rgba(11, 16, 32, 0.7);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-      }
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
 
-      .brand {
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Manaf",
+    "jobTitle": "AI Engineer & Software Engineer",
+    "url": "https://manaf430.github.io",
+    "sameAs": [
+      "https://github.com/manaf430",
+      "https://www.linkedin.com/in/abdul-manaf-5909a42a0/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lahore",
+      "addressCountry": "Pakistan"
+    },
+    "email": "munaf5713@gmail.com"
+  }
+  </script>
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
 
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-      }
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-      .nav-links a {
-        color: var(--muted);
-        text-decoration: none;
-      }
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand" aria-label="Abdul Manaf - Home">
+        <img src="assets/avatar.svg" alt="Abdul Manaf Avatar" class="brand-avatar" width="36" height="36" />
+        <div>
+          <span class="gradient-text">Abdul Manaf</span>
+          <span class="brand-sub">AI &bull; Software</span>
+        </div>
+      </a>
 
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
 
-      .hero {
-        padding: 80px 0 40px;
-      }
+      <!-- Action Buttons (Theme Toggle & Mobile Menu) -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="theme-icon-moon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
 
-      .hero h1 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        margin: 0 0 12px;
-      }
-
-      .hero p {
-        color: var(--muted);
-        max-width: 700px;
-      }
-
-      .actions {
-        margin-top: 20px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 10px 16px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .btn-primary {
-        color: #00112e;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      }
-
-      .btn-outline {
-        color: var(--text);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
-
-      section {
-        padding: 28px 0;
-      }
-
-      h2 {
-        margin: 0 0 16px;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 16px;
-      }
-
-      .card {
-        background: var(--panel);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 18px;
-      }
-
-      .card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-
-      .card p {
-        margin-top: 0;
-        color: var(--muted);
-      }
-
-      .card a {
-        color: var(--accent-2);
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .chip {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 0.9rem;
-      }
-
-      footer {
-        padding: 30px 0 40px;
-        color: var(--muted);
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <nav>
-          <div class="brand">Manaf Portfolio</div>
-          <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="container">
-      <section class="hero">
-        <h1>Hi, I'm Manaf 👋</h1>
-        <p>
-          I'm a developer building modern web experiences. Welcome to my live
-          portfolio where I share featured projects, skills, and ways to connect.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn btn-outline" href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+  <!-- Mobile Drawer Menu -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <main>
+    <!-- ====================================================================
+         1. HERO / LANDING SECTION
+         ==================================================================== -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Bio, CTAs & Socials -->
+          <div class="hero-content">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Available for AI &amp; Software Engineering Roles</span>
+            </div>
+
+            <h1 class="hero-name">
+              Hi, I'm <span class="gradient-text">Abdul Manaf</span>
+            </h1>
+
+            <div class="hero-title-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+              <span>AI Engineer &bull; Software Engineer</span>
+            </div>
+
+            <p class="hero-tagline">
+              Engineering production-grade LLM applications, agentic RAG workflows, and high-throughput cloud backends with Python, FastAPI, LangGraph, and AWS.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <span>Get in Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+              <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="Visit GitHub profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+
+            <!-- Social Icon Pills -->
+            <div class="hero-socials">
+              <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub: manaf430">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/abdul-manaf-5909a42a0/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn: Abdul Manaf">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="mailto:munaf5713@gmail.com" class="social-icon-btn" aria-label="Send Email" title="Email: munaf5713@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+              <a href="tel:03130725910" class="social-icon-btn" aria-label="Call Phone" title="Phone: 0313-0725910">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Terminal Telemetry -->
+          <div class="telemetry-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="t-dot red"></span>
+                <span class="t-dot yellow"></span>
+                <span class="t-dot green"></span>
+              </div>
+              <div class="terminal-title">manaf@workstation:~</div>
+              <div style="width: 40px;"></div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="t-prompt">$</span>
+                <span class="t-cmd">whoami</span>
+              </div>
+              <div class="t-output">
+                <span class="t-highlight">&gt; Abdul Manaf</span> — AI Engineer &amp; Backend Developer based in Lahore, PK.
+              </div>
+
+              <div class="terminal-line">
+                <span class="t-prompt">$</span>
+                <span class="t-cmd">python -m stack --inspect</span>
+              </div>
+              <div class="t-output">
+                <div>[Core AI] <span class="t-badge">LangGraph</span> <span class="t-badge">RAG</span> <span class="t-badge">Qdrant</span> <span class="t-badge">OpenAI</span></div>
+                <div>[Backend] <span class="t-badge">FastAPI</span> <span class="t-badge">Python</span> <span class="t-badge">PostgreSQL</span></div>
+                <div>[Cloud] <span class="t-badge">AWS EC2/S3/Lambda/VPC</span> <span class="t-badge">Docker</span></div>
+              </div>
+
+              <div class="terminal-line">
+                <span class="t-prompt">$</span>
+                <span class="t-cmd">cat current_status.log</span>
+              </div>
+              <div class="t-output">
+                <span class="t-highlight">● ACTIVE:</span> Building enterprise LLM agents &amp; scalable microservices @ WorkfloX
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I enjoy creating clean, responsive, and user-focused websites. I am
-          continuously learning and shipping real projects.
-        </p>
-      </section>
+        <!-- Quick Metrics Bar -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-val">8+</div>
+            <div class="metric-label">Featured Projects Built</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">AWS</div>
+            <div class="metric-label">Cloud Certified &amp; Deployed</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">3.49</div>
+            <div class="metric-label">CGPA &bull; BS Computer Science</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">100+</div>
+            <div class="metric-label">IEEE CS Members Mentored</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="projects">
-        <h2>Live Projects</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Portfolio Website</h3>
-            <p>This website, hosted using GitHub Pages.</p>
-            <a href="https://manaf430.github.io/" target="_blank" rel="noopener noreferrer">Open Live</a>
+    <!-- ====================================================================
+         2. ABOUT SECTION
+         ==================================================================== -->
+    <section id="about" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="dot"></span>
+            <span>01 // About Me</span>
+          </div>
+          <h2 class="section-title">Engineering at the Intersection of AI &amp; Software</h2>
+          <p class="section-subtitle">Bridging algorithmic intelligence, enterprise security, and robust distributed systems.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Text Card with Bio -->
+          <article class="glass-surface about-text-card">
+            <p class="about-bio">
+              <strong>AI Engineer and Software Engineer</strong> with hands-on experience building production LLM applications, agentic RAG systems, and full-stack backend services. Skilled in <strong>LangGraph, LangChain, vector databases (Qdrant, ChromaDB), and the OpenAI API</strong>, with strong foundations in Python, FastAPI, React, Object-Oriented Programming (OOP), Data Structures &amp; Algorithms, and REST API design.
+            </p>
+            <p class="about-bio">
+              Experienced in <strong>LLMOps, prompt engineering, and deploying secure, scalable systems on AWS</strong>. Comfortable across the stack — from computer vision and machine learning to backend architecture and cloud deployment. Demonstrated technical leadership through <strong>IEEE Computer Society</strong> and university initiatives.
+            </p>
           </article>
-          <article class="card">
-            <h3>Project Repository</h3>
-            <p>Explore source code and updates for my work.</p>
-            <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">View GitHub</a>
+
+          <!-- 4 Core Pillars Cards -->
+          <div class="focus-cards">
+            <div class="glass-surface focus-card">
+              <div class="focus-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+              </div>
+              <div>
+                <h3 class="focus-title">Agentic AI &amp; LLMOps</h3>
+                <p class="focus-desc">Intent-driven LangGraph architectures, semantic vector retrieval, guardrails, and cached LLM routing with Portkey and LangSmith.</p>
+              </div>
+            </div>
+
+            <div class="glass-surface focus-card">
+              <div class="focus-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 9 3 3-3 3"></path><path d="M13 15h3"></path></svg>
+              </div>
+              <div>
+                <h3 class="focus-title">High-Throughput Backends</h3>
+                <p class="focus-desc">Asynchronous FastAPI microservices, relational PostgreSQL &amp; NoSQL architectures, strict validation, and clean RESTful design.</p>
+              </div>
+            </div>
+
+            <div class="glass-surface focus-card">
+              <div class="focus-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+              </div>
+              <div>
+                <h3 class="focus-title">AWS Cloud &amp; Infrastructure</h3>
+                <p class="focus-desc">Two-tier VPC isolation, Bastion host security, Auto Scaling, CodePipeline CI/CD, and serverless pipelines with Lambda &amp; EventBridge.</p>
+              </div>
+            </div>
+
+            <div class="glass-surface focus-card">
+              <div class="focus-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div>
+                <h3 class="focus-title">Community &amp; Tech Leadership</h3>
+                <p class="focus-desc">Executive Director of IEEE Computer Society UCP, leading technical workshops, cross-functional operations, and industry collaboration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. SKILLS SECTION (Grouped Tag/Badge Style)
+         ==================================================================== -->
+    <section id="skills" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="dot"></span>
+            <span>02 // Skills &amp; Technologies</span>
+          </div>
+          <h2 class="section-title">Technical Competencies</h2>
+          <p class="section-subtitle">Categorized breakdown of frameworks, toolchains, cloud infrastructure, and languages.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. AI/ML Engineering -->
+          <div class="glass-surface skill-category-card span-full">
+            <div class="skill-cat-header">
+              <div class="skill-cat-title">
+                <div class="skill-cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                </div>
+                <span>AI/ML Engineering</span>
+              </div>
+              <span class="skill-cat-count">12 Technologies</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge highlight">LLMs</span>
+              <span class="skill-badge highlight">RAG</span>
+              <span class="skill-badge highlight">LangGraph</span>
+              <span class="skill-badge">LangChain</span>
+              <span class="skill-badge">LangSmith</span>
+              <span class="skill-badge highlight">Agentic AI</span>
+              <span class="skill-badge">OpenAI API</span>
+              <span class="skill-badge">LLMOps</span>
+              <span class="skill-badge">Prompt Engineering</span>
+              <span class="skill-badge highlight">Vector DBs (Qdrant, ChromaDB)</span>
+              <span class="skill-badge">NeMo Guardrails</span>
+              <span class="skill-badge">Portkey</span>
+            </div>
+          </div>
+
+          <!-- 2. Machine Learning -->
+          <div class="glass-surface skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-title">
+                <div class="skill-cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+                </div>
+                <span>Machine Learning</span>
+              </div>
+              <span class="skill-cat-count">7 Technologies</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge highlight">TensorFlow</span>
+              <span class="skill-badge">Scikit-learn</span>
+              <span class="skill-badge">XGBoost</span>
+              <span class="skill-badge">CNNs</span>
+              <span class="skill-badge highlight">OpenCV</span>
+              <span class="skill-badge highlight">YOLOv8</span>
+              <span class="skill-badge">OCR</span>
+            </div>
+          </div>
+
+          <!-- 3. Software Engineering -->
+          <div class="glass-surface skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-title">
+                <div class="skill-cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span>Software Engineering</span>
+              </div>
+              <span class="skill-cat-count">10 Disciplines</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge highlight">Python</span>
+              <span class="skill-badge">C</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge highlight">OOP Principles</span>
+              <span class="skill-badge highlight">Data Structures &amp; Algorithms</span>
+              <span class="skill-badge">REST APIs</span>
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+            </div>
+          </div>
+
+          <!-- 4. Backend & Cloud -->
+          <div class="glass-surface skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-title">
+                <div class="skill-cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
+                </div>
+                <span>Backend &amp; Cloud</span>
+              </div>
+              <span class="skill-cat-count">14 Services</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge highlight">FastAPI</span>
+              <span class="skill-badge highlight">AWS (EC2, S3, RDS)</span>
+              <span class="skill-badge highlight">AWS Lambda</span>
+              <span class="skill-badge">AWS VPC</span>
+              <span class="skill-badge">IAM</span>
+              <span class="skill-badge">CloudFormation</span>
+              <span class="skill-badge">CodePipeline</span>
+              <span class="skill-badge">EventBridge</span>
+              <span class="skill-badge">SNS</span>
+              <span class="skill-badge highlight">Docker</span>
+              <span class="skill-badge">CI/CD</span>
+              <span class="skill-badge highlight">PostgreSQL</span>
+              <span class="skill-badge">MongoDB</span>
+            </div>
+          </div>
+
+          <!-- 5. Frontend -->
+          <div class="glass-surface skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-title">
+                <div class="skill-cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+                </div>
+                <span>Frontend Development</span>
+              </div>
+              <span class="skill-cat-count">3 Frameworks</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge highlight">React</span>
+              <span class="skill-badge highlight">TypeScript</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">Responsive UI</span>
+              <span class="skill-badge">Accessibility (WCAG)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. EXPERIENCE SECTION (Timeline Style)
+         ==================================================================== -->
+    <section id="experience" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="dot"></span>
+            <span>03 // Career History</span>
+          </div>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-subtitle">Demonstrated impact across commercial software engineering, applied AI prototypes, and technical community leadership.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1: Associate Software Engineer @ WorkfloX -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <article class="glass-surface timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3 class="timeline-role">Associate Software Engineer</h3>
+                  <div class="timeline-company">
+                    <span>WorkfloX</span>
+                    <span>&bull;</span>
+                    <span style="font-weight: 500; font-size: 0.9rem; color: var(--text-muted);">Lahore, Pakistan</span>
+                  </div>
+                </div>
+                <div class="timeline-badge-group">
+                  <span class="date-pill">Apr 2026 – Present</span>
+                  <span class="type-pill">Part-time &bull; On-site</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Build and integrate LLM-powered features into production backend systems using the OpenAI API and FastAPI.</li>
+                <li>Design and maintain custom API integrations and deployment workflows for AI-driven products in a live environment.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Item 2: AI/ML Intern @ WorkfloX -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <article class="glass-surface timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3 class="timeline-role">AI/ML Intern</h3>
+                  <div class="timeline-company">
+                    <span>WorkfloX</span>
+                    <span>&bull;</span>
+                    <span style="font-weight: 500; font-size: 0.9rem; color: var(--text-muted);">Lahore, Pakistan</span>
+                  </div>
+                </div>
+                <div class="timeline-badge-group">
+                  <span class="date-pill">Feb 2026 – Apr 2026</span>
+                  <span class="type-pill">On-site</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Built AI backend prototypes for human activity recognition, facial expression recognition, and object detection using Python, TensorFlow, OpenCV, and YOLOv8.</li>
+                <li>Developed a RAG-based WhatsApp chatbot and an OCR-based resume-filtering pipeline using FastAPI and LLMOps practices.</li>
+                <li>Built a LinkedIn job-scraper agent and designed an AI receptionist calling agent, engineering the automation workflow end-to-end.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Item 3: Executive Director @ IEEE Computer Society -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <article class="glass-surface timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3 class="timeline-role">Executive Director</h3>
+                  <div class="timeline-company">
+                    <span>IEEE Computer Society, UCP Student Chapter</span>
+                  </div>
+                </div>
+                <div class="timeline-badge-group">
+                  <span class="date-pill">Oct 2025 – Feb 2026</span>
+                  <span class="type-pill">Leadership</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Directed chapter-wide operations and strategy, overseeing cross-functional teams and technical initiatives.</li>
+                <li>Coordinated with industry partners for skill development sessions and specialized engineering workshops.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Item 4: HR Director @ IEEE Computer Society -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <article class="glass-surface timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3 class="timeline-role">HR Director</h3>
+                  <div class="timeline-company">
+                    <span>IEEE Computer Society, UCP Student Chapter</span>
+                  </div>
+                </div>
+                <div class="timeline-badge-group">
+                  <span class="date-pill">2024 – Oct 2025</span>
+                  <span class="type-pill">Leadership</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Led recruitment and professional development initiatives for 100+ members.</li>
+                <li>Organized technical workshops and mentorship programs to accelerate software engineering readiness.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. PROJECTS SECTION (Centerpiece Grid with Tech Tags & Filters)
+         ==================================================================== -->
+    <section id="projects" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="dot"></span>
+            <span>04 // Engineering Portfolio</span>
+          </div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Real-world AI systems, scalable cloud architectures, and production prototypes built with modern toolchains.</p>
+        </div>
+
+        <!-- Filter Controls Bar -->
+        <div class="projects-controls">
+          <div class="filter-tabs" role="tablist" aria-label="Filter Projects">
+            <button class="filter-btn active" data-filter="all" role="tab">All (8)</button>
+            <button class="filter-btn" data-filter="ai" role="tab">AI &amp; Agents (4)</button>
+            <button class="filter-btn" data-filter="cloud" role="tab">Cloud &amp; Backend (2)</button>
+            <button class="filter-btn" data-filter="ml" role="tab">Machine Learning (4)</button>
+          </div>
+          <div class="projects-summary-text">
+            <span>// Click cards to inspect code &amp; details</span>
+          </div>
+        </div>
+
+        <!-- Featured Flagship Projects (Expanded Card Layout) -->
+        <div class="featured-projects">
+          <!-- Project 1: Enterprise Agentic RAG Assistant -->
+          <article class="glass-surface project-card-featured" data-category="ai cloud">
+            <div class="project-card-header">
+              <div>
+                <div class="project-category-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  <span>Featured Flagship &bull; Enterprise AI</span>
+                </div>
+                <h3 class="project-title">Enterprise Agentic RAG Assistant</h3>
+              </div>
+              <span class="project-status-tag">Production Ready</span>
+            </div>
+
+            <p class="project-desc">
+              Built a highly accurate, intent-driven RAG system using LangGraph and FastAPI, leveraging Qdrant and semantic re-ranking to extract data from complex enterprise documents. Secured the application against prompt injections and data leaks using Nvidia NeMo Guardrails, and optimized LLM routing, latency, and response caching using Portkey and LangSmith.
+            </p>
+
+            <div class="project-highlights-grid">
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Nvidia NeMo Guardrails Security Layer</span>
+              </div>
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Portkey &amp; LangSmith Observability &amp; Caching</span>
+              </div>
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Qdrant Vector DB with Semantic Re-ranking</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tag">LangGraph</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Qdrant</span>
+              <span class="tag">NeMo Guardrails</span>
+              <span class="tag">Portkey</span>
+              <span class="tag">LangSmith</span>
+              <span class="tag">Python</span>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link" title="View Source Code">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link" title="Architecture Details">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                  <span>Architecture</span>
+                </a>
+              </div>
+              <span class="mono" style="font-size: 0.78rem; color: var(--text-subtle);">2026</span>
+            </div>
           </article>
-          <article class="card">
-            <h3>Next Featured Project</h3>
-            <p>Add your next live project link here.</p>
-            <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">Add Link</a>
+
+          <!-- Project 2: TAVI: Toddler & Adult Virtual Intelligence (FYP) -->
+          <article class="glass-surface project-card-featured" data-category="ai cloud">
+            <div class="project-card-header">
+              <div>
+                <div class="project-category-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>Final Year Project &bull; Capstone Award</span>
+                </div>
+                <h3 class="project-title">TAVI: Toddler &amp; Adult Virtual Intelligence</h3>
+              </div>
+              <span class="project-status-tag">1000+ Concurrency</span>
+            </div>
+
+            <p class="project-desc">
+              A full-stack, microservices-based web platform delivering real-time, emotion-adaptive support for individuals with Autism Spectrum Disorder across 4 age groups, with bilingual English/Urdu support and WCAG 2.1 AA accessibility. Integrated AWS Bedrock, Anam AI, and ElevenLabs for AI reasoning, avatar rendering, and voice synthesis; deployed on AWS to support 1000+ concurrent users.
+            </p>
+
+            <div class="project-highlights-grid">
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>AWS Bedrock, Anam AI &amp; ElevenLabs Voice</span>
+              </div>
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Bilingual English &amp; Urdu Speech + WCAG 2.1 AA</span>
+              </div>
+              <div class="highlight-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Multi-DB: PostgreSQL, MongoDB &amp; ChromaDB</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">ChromaDB</span>
+              <span class="tag">AWS Bedrock</span>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link" title="View Source Code">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link" title="Live Prototype">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                  <span>Capstone Demo</span>
+                </a>
+              </div>
+              <span class="mono" style="font-size: 0.78rem; color: var(--text-subtle);">FYP 2026</span>
+            </div>
           </article>
         </div>
-      </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-          <span class="chip">HTML5</span>
-          <span class="chip">CSS3</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">Responsive Design</span>
-          <span class="chip">Git & GitHub</span>
+        <!-- Remaining Projects Grid (Matching Reference Site Density) -->
+        <div class="projects-grid">
+          <!-- Project 3: Secure Two-Tier Web Architecture -->
+          <article class="glass-surface project-card" data-category="cloud">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                <span>Cloud Infrastructure</span>
+              </div>
+              <h3 class="project-title">Secure Two-Tier Web Architecture with Serverless Analytics</h3>
+              <p class="project-desc">
+                Designed and deployed a secure, highly available two-tier AWS architecture with VPC isolation, Bastion Host access, Auto Scaling, and a Load Balancer for fault tolerance. Automated infrastructure provisioning using CloudFormation and CodePipeline, with a serverless analytics pipeline using Lambda, EventBridge, and SNS.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">AWS EC2</span>
+                <span class="tag">S3</span>
+                <span class="tag">RDS MySQL</span>
+                <span class="tag">VPC</span>
+                <span class="tag">CloudFormation</span>
+                <span class="tag">Lambda</span>
+                <span class="tag">EventBridge</span>
+                <span class="tag">SNS</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Source</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>IaC Blueprint</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">DevOps</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Resume Semantic Search -->
+          <article class="glass-surface project-card" data-category="ai ml">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                <span>NLP &amp; Semantic Retrieval</span>
+              </div>
+              <h3 class="project-title">Resume Semantic Search</h3>
+              <p class="project-desc">
+                Engineered an NLP-based resume matching backend using contextual text embeddings, dense vector semantic search, and custom similarity ranking algorithms to filter and match candidate profiles against technical job requisitions.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Embeddings</span>
+                <span class="tag">Semantic Search</span>
+                <span class="tag">Ranking Algorithms</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Source</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>Demo</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">NLP</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Loan Default Prediction -->
+          <article class="glass-surface project-card" data-category="ml">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Tabular Deep Learning</span>
+              </div>
+              <h3 class="project-title">Loan Default Prediction using FT-Transformer</h3>
+              <p class="project-desc">
+                Conducted deep comparative research benchmarks comparing Feature Tokenizer Transformer (FT-Transformer), XGBoost, and Logistic Regression on LendingClub financial credit data using AUC, F1-score, KS statistic, and robust class imbalance handling.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">FT-Transformer</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">Logistic Regression</span>
+                <span class="tag">Imbalance ML</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Research Code</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>Report</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">FinTech ML</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Human Activity & YOLOv8 Object Detection -->
+          <article class="glass-surface project-card" data-category="ml">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Computer Vision</span>
+              </div>
+              <h3 class="project-title">Human Activity Recognition &amp; YOLOv8 Detection</h3>
+              <p class="project-desc">
+                Built real-time TensorFlow and YOLOv8 computer vision pipelines for human action recognition, multi-class object detection, and spatial bounding-box tracking optimized for high-FPS camera feeds.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">TensorFlow</span>
+                <span class="tag">YOLOv8</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Python</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Source</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>Inference</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">CV</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Stock Market Prediction System -->
+          <article class="glass-surface project-card" data-category="ml">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                <span>Deep Learning &bull; Time Series</span>
+              </div>
+              <h3 class="project-title">Stock Market Prediction System</h3>
+              <p class="project-desc">
+                Developed a recurrent LSTM neural network architecture for financial time-series forecasting, historical price pattern recognition, and trend estimation across volatile equity markets.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">LSTM</span>
+                <span class="tag">Time Series</span>
+                <span class="tag">NumPy</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Source</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>Forecast</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">LSTM</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Fraud Detection System -->
+          <article class="glass-surface project-card" data-category="ml">
+            <div>
+              <div class="project-category-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
+                <span>Anomaly Detection</span>
+              </div>
+              <h3 class="project-title">Fraud Detection System</h3>
+              <p class="project-desc">
+                Engineered an ensemble machine learning detection model combining XGBoost classifiers and unsupervised Isolation Forests to flag fraudulent transactional activity in skewed, high-cardinality datasets.
+              </p>
+            </div>
+
+            <div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">Isolation Forests</span>
+                <span class="tag">Anomaly Detection</span>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>Source</span>
+                  </a>
+                  <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                    <span>Metrics</span>
+                  </a>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-subtle);">Security</span>
+              </div>
+            </div>
+          </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          Reach me via GitHub:
-          <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">github.com/manaf430</a>
-        </p>
-      </section>
-    </main>
+    <!-- ====================================================================
+         6 & 7. EDUCATION & CERTIFICATIONS SECTION
+         ==================================================================== -->
+    <section id="education" class="reveal">
+      <div class="container">
+        <div class="edu-cert-grid">
+          <!-- Left Column: Education -->
+          <div class="edu-cert-column">
+            <div class="column-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>05 // Education</span>
+            </div>
 
-    <footer>
-      <div class="container">© <span id="year"></span> Manaf. Built with HTML & CSS.</div>
-    </footer>
+            <!-- Degree 1: BS CS -->
+            <article class="glass-surface edu-card">
+              <div class="edu-header">
+                <div>
+                  <h3 class="edu-degree">Bachelor of Science in Computer Science</h3>
+                  <div class="edu-institution">University of Central Punjab</div>
+                </div>
+                <span class="gpa-pill">CGPA: 3.49 / 4.0</span>
+              </div>
+              <div class="mono" style="font-size: 0.8rem; color: var(--primary); margin-bottom: 10px;">
+                2022 &ndash; 2026 &bull; Lahore, Pakistan
+              </div>
+              <p class="edu-details">
+                Rigorous curriculum in Object-Oriented Programming, Data Structures &amp; Algorithms, Database Systems, Computer Networks, Operating Systems, Machine Learning, and Cloud Computing. Active student leadership and project exhibitions.
+              </p>
+            </article>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+            <!-- Degree 2: FSc Pre-Engineering -->
+            <article class="glass-surface edu-card">
+              <div class="edu-header">
+                <div>
+                  <h3 class="edu-degree">FSc Pre-Engineering</h3>
+                  <div class="edu-institution">Punjab College, Abdalian Campus</div>
+                </div>
+                <span class="type-pill">Higher Secondary</span>
+              </div>
+              <div class="mono" style="font-size: 0.8rem; color: var(--primary); margin-bottom: 10px;">
+                2020 &ndash; 2022 &bull; Lahore, Pakistan
+              </div>
+              <p class="edu-details">
+                Comprehensive training in Advanced Mathematics, Physics, and Analytical Problem Solving, establishing core engineering fundamentals.
+              </p>
+            </article>
+          </div>
+
+          <!-- Right Column: Certifications -->
+          <div class="edu-cert-column" id="certifications">
+            <div class="column-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span>06 // Certifications</span>
+            </div>
+
+            <!-- Cert 1: AWS Cloud Foundations -->
+            <article class="glass-surface cert-card">
+              <div class="cert-header">
+                <h3 class="cert-title">AWS Cloud Foundations Certificate</h3>
+                <span class="date-pill">2025</span>
+              </div>
+              <div class="cert-issuer">Amazon Web Services</div>
+              <p class="cert-desc">
+                Core cloud architectural principles, security policies, VPC networking, compute (EC2/Lambda), storage (S3), and database services.
+              </p>
+            </article>
+
+            <!-- Cert 2: Advanced Python Programming -->
+            <article class="glass-surface cert-card">
+              <div class="cert-header">
+                <h3 class="cert-title">Advanced Python Programming</h3>
+                <span class="date-pill">2025</span>
+              </div>
+              <div class="cert-issuer">NAVTTC</div>
+              <p class="cert-desc">
+                Advanced Python programming, OOP principles, Flask/Django web architectures, desktop GUI applications, data pipeline handling, and ML prototypes.
+              </p>
+            </article>
+
+            <!-- Cert 3: Exploratory Data Analysis for ML -->
+            <article class="glass-surface cert-card">
+              <div class="cert-header">
+                <h3 class="cert-title">Exploratory Data Analysis for Machine Learning</h3>
+                <span class="date-pill">2025</span>
+              </div>
+              <div class="cert-issuer">IBM (Coursera)</div>
+              <p class="cert-desc">
+                Data visualization, statistical distribution modeling, correlation analysis, hypothesis testing, and advanced feature engineering pipelines.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. CONTACT & FOOTER SECTION
+         ==================================================================== -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="dot"></span>
+            <span>07 // Get in Touch</span>
+          </div>
+          <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+          <p class="section-subtitle">Whether you're looking for an AI Engineer, a backend developer, or want to discuss agentic workflows — my inbox is open.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details Cards -->
+          <div class="contact-info-cards">
+            <!-- Email -->
+            <div class="glass-surface contact-tile">
+              <div class="tile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </div>
+              <span class="tile-label">Email Address</span>
+              <span class="tile-val">munaf5713@gmail.com</span>
+              <button class="tile-action" data-copy="munaf5713@gmail.com" title="Copy to clipboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                <span>Click to Copy</span>
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="glass-surface contact-tile">
+              <div class="tile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <span class="tile-label">Phone / WhatsApp</span>
+              <span class="tile-val">0313-0725910</span>
+              <a href="tel:03130725910" class="tile-action">
+                <span>Call Directly &rarr;</span>
+              </a>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="glass-surface contact-tile">
+              <div class="tile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <span class="tile-label">LinkedIn Profile</span>
+              <span class="tile-val">abdul-manaf</span>
+              <a href="https://www.linkedin.com/in/abdul-manaf-5909a42a0/" target="_blank" rel="noopener noreferrer" class="tile-action">
+                <span>Open Profile &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div class="glass-surface contact-tile">
+              <div class="tile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <span class="tile-label">Location</span>
+              <span class="tile-val">Lahore, Pakistan</span>
+              <span class="tile-action" style="cursor: default; text-decoration: none;">PKT (UTC +5)</span>
+            </div>
+          </div>
+
+          <!-- Right: Quick Message Direct Mailto Launcher -->
+          <div class="glass-surface contact-form-card">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Quick Message</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Send a message directly to my inbox with one click.</p>
+
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Alex Rivers" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Project Collaboration / Job Opportunity" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message</label>
+                <textarea id="form-message" class="form-textarea" rows="4" placeholder="Hello Abdul, I came across your portfolio and would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        &copy; <span id="current-year"></span> <strong>Abdul Manaf</strong>. All rights reserved.
+        <div style="font-size: 0.8rem; color: var(--text-subtle); margin-top: 4px;">
+          Built with semantic HTML5, modern CSS, and vanilla JavaScript. Hosted on GitHub Pages.
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Back to Top &uarr;</a>
+        <a href="https://github.com/manaf430" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdul-manaf-5909a42a0/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:munaf5713@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" style="position: fixed; bottom: 24px; left: 24px; z-index: 90; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span class="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
 </html>
